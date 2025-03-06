@@ -87,6 +87,7 @@ class App {
 
         this.brushButton.addEventListener('click', this.setTool.bind(this, this.brushTool));
         this.rectangleButton.addEventListener('click', this.setTool.bind(this, this.rectangleTool));
+        this.circleButton.addEventListener('click', this.setTool.bind(this, this.circleTool));
 
         window.addEventListener('keydown', (e) => {
             if (e.key === 'z' && e.ctrlKey) {
@@ -184,9 +185,12 @@ class App {
             }
         }
 
-        this.brushTool.importSettings(data.toolSettings.BrushTool);
-        this.rectangleTool.importSettings(data.toolSettings.RectangleTool);
-        this.circleTool.importSettings(data.toolSettings.CircleTool);
+        if (data.toolSettings.BrushTool)
+            this.brushTool.importSettings(data.toolSettings.BrushTool);
+        if (data.toolSettings.RectangleTool)
+            this.rectangleTool.importSettings(data.toolSettings.RectangleTool);
+        if (data.toolSettings.CircleTool)
+            this.circleTool.importSettings(data.toolSettings.CircleTool);
     }
     exportToImage() {
         let a = document.createElement('a');
