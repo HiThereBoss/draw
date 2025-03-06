@@ -46,7 +46,7 @@ class CircleTool {
         this.tools = ["color"];
     }
     inputDown(x, y) {
-        this.currentCircle = new Rectangle(x, y, this.color);
+        this.currentCircle = new Circle(x, y, this.color);
         this.objects.push(this.currentCircle);
     }
     inputMove(x, y) {
