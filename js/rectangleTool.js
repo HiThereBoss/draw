@@ -39,7 +39,7 @@ class RectangleTool {
 
         this.color = '#000000';
 
-        this.currentStroke = null;
+        this.currentRectangle = null;
 
         this.tools = ["color"];
     }

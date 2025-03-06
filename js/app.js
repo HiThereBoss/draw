@@ -1,6 +1,6 @@
 import { BrushTool, Stroke } from './brushTool.js';
 import { RectangleTool, Rectangle } from './rectangleTool.js';
-// Drawing app with HTML5 Canvas and JavaScript
+import { CircleTool, Circle } from './circleTool.js';
 
 // Classes
 class App {
@@ -30,13 +30,16 @@ class App {
         this.rectangleButton = document.getElementById('rectangle');
         this.rectangleTool = new RectangleTool(this);
 
+        this.circleButton = document.getElementById('circle');
+        this.circleTool = new CircleTool(this);
+
         this.render = this.render.bind(this);
 
         this.load();
         this.setTool(this.brushTool);
         this.listen();
 
-        setInterval(this.render, 1000 / 120);
+        setInterval(this.render, 1000 / 60);
     }
     listen() {
         const getLocalCoordinates = (e) => {
@@ -151,6 +154,7 @@ class App {
 
         data.toolSettings.BrushTool = this.brushTool.exportSettings();
         data.toolSettings.RectangleTool = this.rectangleTool.exportSettings();
+        data.toolSettings.CircleTool = this.circleTool.exportSettings();
 
         localStorage.setItem('saveData', JSON.stringify(data));
     }
@@ -160,28 +164,29 @@ class App {
             return;
         }
         for (let obj of data.objects) {
+            let newObj = null;
             switch (obj.type) {
                 case 'stroke':
-                    this.objects.push(Stroke.import(obj));
+                    newObj = Stroke.import(obj);
+                    this.objects.push(newObj);
+                    this.objectsMemory.push(newObj);
                     break;
                 case 'rectangle':
-                    this.objects.push(Rectangle.import(obj));
+                    newObj = Rectangle.import(obj);
+                    this.objects.push(newObj);
+                    this.objectsMemory.push(newObj);
                     break;
-            }
-        }
-        for (let obj of data.memory) {
-            switch (obj.type) {
-                case 'stroke':
-                    this.objectsMemory.push(Stroke.import(obj));
-                    break;
-                case 'rectangle':
-                    this.objectsMemory.push(Rectangle.import(obj));
+                case 'circle':
+                    newObj = Circle.import(obj);
+                    this.objects.push(newObj);
+                    this.objectsMemory.push(newObj);
                     break;
             }
         }
 
         this.brushTool.importSettings(data.toolSettings.BrushTool);
         this.rectangleTool.importSettings(data.toolSettings.RectangleTool);
+        this.circleTool.importSettings(data.toolSettings.CircleTool);
     }
     exportToImage() {
         let a = document.createElement('a');
