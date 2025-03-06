@@ -30,6 +30,8 @@ class Circle {
     static import(data) {
         let circle = new Circle(data.ix, data.iy, data.color);
         circle.radius = data.radius;
+        circle.x = data.x;
+        circle.y = data.y;
         return circle;
     }
 }

@@ -1,6 +1,7 @@
 import { BrushTool, Stroke } from './brushTool.js';
 import { RectangleTool, Rectangle } from './rectangleTool.js';
 import { CircleTool, Circle } from './circleTool.js';
+import { TriangleTool, Triangle } from './triangleTool.js';
 
 // Classes
 class App {
@@ -32,6 +33,9 @@ class App {
 
         this.circleButton = document.getElementById('circle');
         this.circleTool = new CircleTool(this);
+
+        this.triangleButton = document.getElementById('triangle');
+        this.triangleTool = new TriangleTool(this);
 
         this.render = this.render.bind(this);
 
@@ -88,6 +92,7 @@ class App {
         this.brushButton.addEventListener('click', this.setTool.bind(this, this.brushTool));
         this.rectangleButton.addEventListener('click', this.setTool.bind(this, this.rectangleTool));
         this.circleButton.addEventListener('click', this.setTool.bind(this, this.circleTool));
+        this.triangleButton.addEventListener('click', this.setTool.bind(this, this.triangleTool));
 
         window.addEventListener('keydown', (e) => {
             if (e.key === 'z' && e.ctrlKey) {
@@ -156,6 +161,7 @@ class App {
         data.toolSettings.BrushTool = this.brushTool.exportSettings();
         data.toolSettings.RectangleTool = this.rectangleTool.exportSettings();
         data.toolSettings.CircleTool = this.circleTool.exportSettings();
+        data.toolSettings.TriangleTool = this.triangleTool.exportSettings();
 
         localStorage.setItem('saveData', JSON.stringify(data));
     }
@@ -182,6 +188,11 @@ class App {
                     this.objects.push(newObj);
                     this.objectsMemory.push(newObj);
                     break;
+                case 'triangle':
+                    newObj = Triangle.import(obj);
+                    this.objects.push(newObj);
+                    this.objectsMemory.push(newObj);
+                    break;
             }
         }
 
@@ -191,6 +202,8 @@ class App {
             this.rectangleTool.importSettings(data.toolSettings.RectangleTool);
         if (data.toolSettings.CircleTool)
             this.circleTool.importSettings(data.toolSettings.CircleTool);
+        if (data.toolSettings.TriangleTool)
+            this.triangleTool.importSettings(data.toolSettings.TriangleTool);
     }
     exportToImage() {
         let a = document.createElement('a');
