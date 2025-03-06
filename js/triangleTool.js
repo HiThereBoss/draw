@@ -1,7 +1,7 @@
 class Triangle {
     constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
+        this.x = 0;
+        this.y = 0;
         this.ix = x;
         this.iy = y;
         this.color = color;
