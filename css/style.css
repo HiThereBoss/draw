@@ -85,6 +85,21 @@
     cursor: pointer;
 }
 
+#undo img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#redo img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    rotate: 180deg;
+}
+
+
+
 #drawing-tools{
     display: flex;
     justify-content: center;
