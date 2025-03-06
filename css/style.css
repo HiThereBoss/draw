@@ -39,7 +39,9 @@
     flex-direction: row;
 }
 
-
+#undo-redo-clear button{
+    margin: 7px;
+}
 
 #canvas {
     border: 2px solid black;
@@ -53,6 +55,42 @@
     flex-direction: row;
     margin-top: 20px;
     
+}
+
+#brush-button{
+    margin-top: 7px;
+}
+#rectangle-button{
+    margin-top: 7px;
+}
+#circle-button{
+    margin-top: 7px;
+}
+
+#brush img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#rectangle img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#circle img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#drawing-tools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 1%;
 }
 
 #controls {
