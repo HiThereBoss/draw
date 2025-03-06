@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 
 #app {
     display: flex;
@@ -6,10 +13,37 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    background-color: lightblue;
+
+    
 }
 
+#exportSave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    
+}
+
+#canvas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#undo-redo-clear{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
 #canvas {
-    border: 1px solid black;
+    border: 2px solid black;
+    background: white;
 }
 
 #toolbar {
@@ -18,6 +52,7 @@
     align-items: center;
     flex-direction: row;
     margin-top: 20px;
+    
 }
 
 #controls {
@@ -27,3 +62,4 @@
     flex-direction: row;
     margin-top: 20px;
 }
+

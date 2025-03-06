@@ -11,16 +11,58 @@
 
     <body>
         <div id="app">
-            <canvas id="canvas"></canvas>
-            <div id="toolbar">
-                <button id="export">Export</button>
-                <button id="save">Save</button>
-                <button id="undo">Undo</button>
-                <button id="redo">Redo</button>
-                <button id="clear">Clear</button>
-                <button id="brush">Brush</button>
-                <button id="rectangle">Rectangle</button>
+            <div id = "exportSave">
+                <div id = "export-button">
+                    <button id="export">Export</button>
+                </div>
+                
+                <div id = "save-button">
+                    <button id="save">Save</button>
+                </div>
             </div>
+
+            <div id = canvas-container>
+                <canvas id="canvas"></canvas>
+
+                <div id = "drawing-tools">
+                    <div id = "brush-button">
+                        <button id="brush">Brush</button>
+                    </div>
+                    
+                    <div id = "rectangle-button">
+                        <button id="rectangle">Rectangle</button>
+                     </div>
+        
+                     <div id = "circle-button">
+                        <button id="circle">Circle</button>
+                     </div>
+                </div>
+
+            </div>
+            
+            
+            <div id = "undo-redo-clear">
+
+                <div id = "undo-button">
+                    <button id="undo">Undo</button>
+                </div>
+                
+                <div id = "redo-button">
+                    <button id="redo">Redo</button>
+                </div>
+    
+                <div id = "clear-button">
+                    <button id="clear">Clear</button>
+                </div>
+            
+            </div>
+              
+            
+            
+            
+            
+            
+            
             <div id="controls">
                 <input type="color" id="color">
                 <input type="range" id="size" min="1" max="100" value="3">
