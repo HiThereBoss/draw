@@ -101,6 +101,10 @@ class LineTool {
     }
     changeColor(color) {
         this.color = color;
+
+        if (this.currentLine) {
+            this.currentLine.color = color;
+        }
     }
     exportSettings() {
         return {
