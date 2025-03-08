@@ -12,12 +12,12 @@
     <body>
         <div id="app">
             <div id = "exportSave">
-                <div id = "export-button">
-                    <button id="export"><img src="images/export.png" alt=""></button>
+                <div class="button" id = "export">
+                    <img src="images/export.png" alt="">
                 </div>
                 
-                <div id = "save-button">
-                    <button id="save"><img src="images/save.png" alt=""></button>
+                <div class="button" id = "save">
+                    <img src="images/save.png" alt="">
                 </div>
             </div>
 
@@ -25,59 +25,51 @@
                 <canvas id="canvas"></canvas>
 
                 <div id = "drawing-tools">
-                    <div id = "brush-button">
-                        <button id="brush"><img src="images/brush.png" alt=""></button>
+                    <div class="button" id = "brush">
+                        <img src="images/brush.png" alt="">
                     </div>
 
-                    <div id = "rectangle-button">
-                        <button id="rectangle"><img src="images/rectangle.png" alt=""></button>
+                    <div class="button" id = "rectangle">
+                        <img src="images/rectangle.png" alt="">
                      </div>
         
-                     <div id = "circle-button">
-                        <button id="circle"><img src="images/circle.png" alt=""></button>
+                     <div class="button" id = "circle">
+                        <img src="images/circle.png" alt="">
                      </div>
 
-                     <div id = "triangle-button">
-                        <button id="triangle"></button>
-
+                     <div class="button" id = "triangle">
+                        <img src="images/triangle.png" alt="">
                      </div>
 
-                    <div id = "line-button">
-                        <button id="line">Line</button>
+                    <div class="button" id = "line">
+                        <img src="images/line.png" alt="">
                     </div>
                 </div>
             </div>
-            
-            
+        
             <div id = "undo-redo-clear">
-
-                <div id = "undo-button">
-                    <button id="undo"><img src="images/undo.png" alt=""></button>
+                <div class="button" id = "undo">
+                    <img src="images/undo.png" alt="">
                 </div>
                 
-                <div id = "redo-button">
-                    <button id="redo"><img src="images/undo.png" alt=""></button>
+                <div class="button" id = "redo">
+                    <img src="images/undo.png" alt="">
                 </div>
                 
                 <div id = "clear-container">
-                    <div id = "clear-button">
-                        <button id="clear"><img src="images/clearButton.png" alt=""></button>
+                    <div class="button" id = "clear">
+                        <img src="images/clearButton.png" alt="">
                         <p id = "clear-text">Clear</p>
                     </div>
                 </div>
-                
-            
             </div>
               
-            
-            
-            
-            
-            
-            
             <div id="controls">
                 <input type="color" id="color">
-                <input type="range" id="size" min="1" max="100" value="3">
+                <div class="slider-container" id="size-container">
+                    <div class="slider-label" id="size-label">Size: </div>
+                    <input class="slider" type="range" id="size" min="1" max="30" value="3">
+                </div>
             </div>
         </div>
 </html>
