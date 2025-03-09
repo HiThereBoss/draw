@@ -176,11 +176,13 @@
     cursor: pointer; 
     opacity: 0.7;
     -webkit-transition: .2s;
-    transition: opacity .2s;
+    transition: width .2s height .2s opacity .2s;
     border-radius: 50%;
 }
 .slider::-webkit-slider-thumb:hover {
     opacity: 1;
+    height: 20px;
+    width: 20px;
 }
 
 .slider::-moz-range-thumb {
