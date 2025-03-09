@@ -1,3 +1,11 @@
+/* 
+    Authors: Emre Bozkurt, Sreyo Biswas
+    Student Numbers: 400555259, 400566085
+    Date Created: 01-03-2025
+
+    This CSS file contains styling and themes for the entire application.
+*/
+
 :root {
     --primary: rgb(208, 183, 164);
     --secondary: rgb(255, 255, 255);
