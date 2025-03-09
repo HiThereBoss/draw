@@ -1,6 +1,6 @@
 /**
  * Authors: Emre Bozkurt, Sreyo Biswas
- * Student Numbers: 400555259, 400
+ * Student Numbers: 400555259, 400566085
  * Date Created: 01-03-2025
  * 
  * Contains the RectangleTool class and Rectangle class.
