@@ -294,6 +294,9 @@ class App {
     clear() {
         let clearBox = new ClearBox(0, 0, this.width, this.height);
         this.objects.push(clearBox);
+
+        this.objectsMemory.splice(0, this.objectsMemory.length);
+
         this.save();
     }
 
